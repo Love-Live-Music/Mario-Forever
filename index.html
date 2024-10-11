@@ -16,26 +16,25 @@
 </head>
 
 <body> 
-<div class="background"></div> <!-- Optional background -->
-    <script>
+<script>
         const player = new Audio("savegameroom.mp3"); // Replace with your audio file
-        player.muted = true; // Start muted for autoplay to work
 
-        // Play audio immediately when the page loads
-        player.play().then(() => {
-            console.log("Audio started muted.");
-        }).catch((error) => {
-            console.error("Playback failed: ", error);
-        });
+        // Function to play audio
+        const playAudio = () => {
+            player.play().then(() => {
+                console.log("Audio is playing.");
+            }).catch((error) => {
+                console.error("Playback failed: ", error);
+            });
 
-        // Unmute audio after user interaction
-        document.addEventListener("click", () => {
-            player.muted = false; // Unmute after click
-        });
+            // Remove the event listener after the first interaction
+            document.removeEventListener("click", playAudio);
+            document.removeEventListener("scroll", playAudio);
+        };
 
-        document.addEventListener("scroll", () => {
-            player.muted = false; // Unmute after scroll
-        });
+        // Set up event listeners for user interaction
+        document.addEventListener("click", playAudio);
+        document.addEventListener("scroll", playAudio);
     </script>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
