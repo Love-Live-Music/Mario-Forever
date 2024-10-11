@@ -16,27 +16,6 @@
 </head>
 
 <body> 
-<script>
-        const player = new Audio("savegameroom.mp3"); // Replace with your audio file
-        player.loop = true; // Enable looping
-
-        // Function to play audio
-        const playAudio = () => {
-            player.play().then(() => {
-                console.log("Audio is playing.");
-            }).catch((error) => {
-                console.error("Playback failed: ", error);
-            });
-
-            // Remove the event listener after the first interaction
-            document.removeEventListener("click", playAudio);
-            document.removeEventListener("scroll", playAudio);
-        };
-
-        // Set up event listeners for user interaction
-        document.addEventListener("click", playAudio);
-        document.addEventListener("scroll", playAudio);
-    </script>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
