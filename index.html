@@ -17,11 +17,9 @@
 
 <body> 
 <script>
-new Audio()
-new Audio(savegameroom.mp3)
-myAudioElement.addEventListener("canplaythrough", (event) => {
-  /* the audio is now playable; play it if permissions allow */
-  myAudioElement.play();
+const player = new Audio("savegameroom.mp3");
+player.addEventListener("canplaythrough" (e) =>{
+  player.play();
 });
 </script>
     <!-- Navbar -->
