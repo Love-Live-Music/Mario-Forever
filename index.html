@@ -16,12 +16,19 @@
 </head>
 
 <body> 
-<script>
-const player = new Audio("savegameroom.mp3");
-player.addEventListener("canplaythrough", (e) => {
-  player.play();
-});
-</script>
+<button id="playButton">Play Background Audio</button>
+
+    <script>
+        const player = new Audio("savegameroom.mp3");
+
+        document.getElementById("playButton").addEventListener("click", () => {
+            player.play().then(() => {
+                console.log("Audio is playing.");
+            }).catch((error) => {
+                console.error("Playback failed: ", error);
+            });
+        });
+    </script>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
