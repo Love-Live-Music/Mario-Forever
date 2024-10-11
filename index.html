@@ -16,17 +16,25 @@
 </head>
 
 <body> 
-<button id="playButton">Play Background Audio</button>
-
+<div class="background"></div> <!-- Optional background -->
     <script>
-        const player = new Audio("savegameroom.mp3");
+        const player = new Audio("savegameroom.mp3"); // Replace with your audio file
+        player.muted = true; // Start muted for autoplay to work
 
-        document.getElementById("playButton").addEventListener("click", () => {
-            player.play().then(() => {
-                console.log("Audio is playing.");
-            }).catch((error) => {
-                console.error("Playback failed: ", error);
-            });
+        // Play audio immediately when the page loads
+        player.play().then(() => {
+            console.log("Audio started muted.");
+        }).catch((error) => {
+            console.error("Playback failed: ", error);
+        });
+
+        // Unmute audio after user interaction
+        document.addEventListener("click", () => {
+            player.muted = false; // Unmute after click
+        });
+
+        document.addEventListener("scroll", () => {
+            player.muted = false; // Unmute after scroll
         });
     </script>
     <!-- Navbar -->
