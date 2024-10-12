@@ -1,23 +1,28 @@
+/* Custom cursor for the entire document */
 html {
-     cursor: url(cursor.ico), default;
-     }
+    cursor: url(cursor.ico), default;
+}
+
+/* Global reset for all elements to set box-sizing and remove margin/padding */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* Basic body styling: font, background color, and full-width layout */
 body {
     font-family: 'Arial', sans-serif;
     background-color: black;
     max-width: 100%;
 }
 
+/* Image styling to restrict the maximum width to 80% of its container */
 img {
     max-width: 80%;
 }
 
-/* Navbar Styles */
+/* Navbar styling */
 .navbar {
     background-color: #1a1a1a;
     padding: 10px 0;
@@ -27,6 +32,7 @@ img {
     color: white;
 }
 
+/* Navbar container commented out for potential use in future */
 .nav-container {
     /* display: flex;
     justify-content: space-around;
@@ -35,6 +41,7 @@ img {
     /* background-color: #007bff; */
 }
 
+/* Navbar branding: larger font and bold text in yellow color */
 .navbar-brand {
     font-size: 24px;
     font-weight: bold;
@@ -43,27 +50,23 @@ img {
     align-items: center;
 }
 
-/* .nav-list {
-    display: flex;
+/* Commented out styling for navigation list */
+.nav-list {
+    /* display: flex;
     list-style: none;
     justify-content: center;
     align-items: center;
     gap: 20px;
     justify-self: center;
-    margin-bottom: 0rem;
-} */
+    margin-bottom: 0rem; */
+}
 
-/* .nav-list li a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    transition: color 0.3s ease;
-} */
-
+/* Hover effect on navbar links (change color to yellow) */
 .nav-list li a:hover {
     color: #f5b10a;
 }
 
+/* Download button styling */
 .btn-download {
     background-color: #f5b10a;
     color: #000;
@@ -74,10 +77,12 @@ img {
     transition: background-color 0.3s ease;
 }
 
+/* Hover effect for the download button */
 .btn-download:hover {
     background-color: #e0a000;
 }
 
+/* Header section background and layout */
 header {
     background-color: rgba(30, 51, 28, 0.884);
     background-image: url('./background.jpg');
@@ -94,25 +99,29 @@ header {
     padding: 20px;
 }
 
+/* Text shadow styling for all elements within the header section */
 header section * {
     text-shadow: -1px 1px 0 #000,
-        1px 1px 0 #000,
-        1px -1px 0 #000,
-        -1px -1px 0 #000;
+                 1px 1px 0 #000,
+                 1px -1px 0 #000,
+                 -1px -1px 0 #000;
 }
 
+/* Header section border and padding */
 header section {
     background: rgba(8, 248, 248, 0.1);
     border: 2px solid rgba(255, 255, 255, 0.7);
     padding: 25px;
 }
 
+/* Carousel title layout and styling */
 .carousel-title {
     text-align: center;
     margin-bottom: 20px;
     position: relative;
 }
 
+/* Styling for the carousel title */
 .carousel-title h2 {
     font-size: 36px;
     font-weight: bold;
@@ -123,6 +132,7 @@ header section {
     padding: 0;
 }
 
+/* Custom underline effect for the carousel title */
 .carousel-title h2::after {
     content: "";
     display: block;
@@ -133,8 +143,7 @@ header section {
     border-radius: 2px;
 }
 
-
-
+/* 3D box animation setup */
 .box {
     position: relative;
     width: 200px;
@@ -143,16 +152,17 @@ header section {
     animation: animate 20s linear infinite;
 }
 
+/* Keyframe animation for 3D rotating box */
 @keyframes animate {
     0% {
         transform: perspective(1000px) rotateY(0deg);
     }
-
     100% {
         transform: perspective(1000px) rotateY(360deg);
     }
 }
 
+/* Span element within the box, defining the 3D effect and reflection */
 .box span {
     position: absolute;
     top: 30px;
@@ -162,9 +172,10 @@ header section {
     transform-origin: center;
     transform-style: preserve-3d;
     transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
-    -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0004)
+    -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0004);
 }
 
+/* Styling for images inside the 3D box */
 .box span img {
     position: absolute;
     top: 0;
@@ -176,27 +187,25 @@ header section {
     object-fit: cover;
 }
 
+/* Pauses the 3D animation on hover */
 .box:hover {
     animation-play-state: paused;
 }
 
+/* Image zoom effect on hover */
 .box span img:hover {
     transform: scale(1.1);
     transition: transform 0.3s ease;
 }
 
+/* Footer background color */
 footer {
     background-color: #f8f9fa;
 }
 
-.navbar-brand {
-    font-size: 24px;
-    font-weight: bold;
-}
-
+/* Additional styles for various elements */
 h1 {
     font-size: 3em;
-    /* Scales based on screen size */
 }
 
 p {
@@ -207,29 +216,31 @@ p {
     font-size: 1.2em;
 }
 
-/* Accordion styles */
+/* Accordion button styles */
 .accordion-button {
     background-color: #0a7ff5;
     color: white;
 }
 
+/* Different background color when accordion button is not collapsed */
 .accordion-button:not(.collapsed) {
     background-color: #ebecec;
 }
 
-/* Carousel styles */
+/* Carousel image styles */
 .carousel-item img {
     max-height: 400px;
     object-fit: cover;
 }
 
-/* Contact Form styles */
+/* Contact form styling */
 form input, form textarea {
     border: 1px solid #ccc;
     padding: 10px;
     font-size: 1em;
 }
 
+/* Contact form button styling */
 form button {
     background-color: #007bff;
     color: white;
@@ -237,53 +248,46 @@ form button {
     border: none;
 }
 
-
-/* Large screens (desktops) */
+/* Responsive styles for large screens */
 @media (min-width: 992px) {
     header {
         padding: 5rem;
         min-height: 80vh;
     }
-
     .box {
         width: 300px;
         height: 300px;
     }
 }
 
-/* Medium screens (tablets) */
+/* Responsive styles for medium screens */
 @media (min-width: 768px) and (max-width: 991px) {
     header {
         padding: 3rem;
         min-height: 60vh;
     }
-
     .box {
         width: 250px;
         height: 250px;
     }
 }
 
-/* Small screens (mobile phones) */
+/* Responsive styles for small screens */
 @media (max-width: 767px) {
     header {
         padding: 2rem;
         min-height: 50vh;
     }
-
     .box {
         width: 150px;
         height: 150px;
     }
-
     h1 {
         font-size: 1.5rem;
     }
-
     p {
         font-size: 1rem;
     }
-
     .btn-warning {
         font-size: 16px;
     }
